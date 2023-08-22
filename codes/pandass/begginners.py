@@ -26,3 +26,15 @@ def calculate_sum(row):
 
 df_saledays['가격합'] = df_saledays.apply(calculate_sum, axis='columns')
 print(df_saledays)
+
+# regexpress(정규식)
+data = {'Names': ['김지수', '박지민', '이태용', '최수영']}
+
+df_Name = pd.DataFrame(data)
+
+print(df_Name)
+
+pattern = r'^([가-힣])'
+
+df_Name_extract = df_Name['Names'].str.extract(pattern)
+print(df_Name_extract)
